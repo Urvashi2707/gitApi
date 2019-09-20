@@ -15,16 +15,23 @@ import { DataService } from '../services/dataService';
 })
 export class AuthComponent implements OnInit {
 
-  public usrObj:string;
+  public usrObj:any;
   constructor(private _githubService:GithubService,
     private _dataService:DataService,
-    private _router: Router,) { }
+    private _router: Router,) { 
+      this.usrObj = {};
+    }
 
   ngOnInit() {
   }
 
   onSubmit(f: NgForm){
-    this._githubService.getUser(f.value.login).subscribe(res => {
+    var obj = {
+      "name" : this.usrObj.username,
+      "pass" : this.usrObj.password
+    }
+    this._dataService.setuserInfo(obj);
+    this._githubService.getUser(f.value.login,f.value.password).subscribe(res => {
       if(res.hasOwnProperty('id')){
         sessionStorage.setItem('id',res['id']);
         this._dataService.setuserInfo(res)

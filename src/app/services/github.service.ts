@@ -1,39 +1,34 @@
 import { Injectable } from '@angular/core';
+import { Buffer } from 'buffer';
+import { DataService } from './dataService';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable()
 export class GithubService {
 
-  private username = 'urvashi2707';
+  private username :string;
+  private password :string;
   private repoName:string;
   public repoContent:any;
   private millisecond:any;
 
-  constructor(private _http: HttpClient) { 
+  constructor(private _http: HttpClient,private _dataService:DataService) { 
 
   }
 
 
-
-  public httpOptions = {
-    headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': ''
-     })
-};
-
-  getUser(user){
+  getUser(user,pass){
     var d = new Date();
     var n = d.getTime();
     this.millisecond = Number(n)
-    const opt1 = {
-      headers: new HttpHeaders({
-        'X-RateLimit-Limit': '5000',
-        // 'X-RateLimit-Remaining':'4999',
-        'X-RateLimit-Reset': this.millisecond })
-    }
     this.username = user;
-    return this._http.get('https://api.github.com/users/'+user);
+   const httpOptions = {
+      headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': 'Basic ' + new Buffer(user+ ':' + pass).toString('base64')
+       })
+  };
+    return this._http.get('https://api.github.com/users/'+user,httpOptions);
   }
 
   getRepo(){

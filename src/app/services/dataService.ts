@@ -12,6 +12,9 @@ export class DataService {
   private userInfo: Subject<any> = new BehaviorSubject<any>(null);
   public _userInfo: Observable<any> = this.userInfo.asObservable();
 
+  private loginInfo: Subject<any> = new BehaviorSubject<any>(null);
+  public _loginInfo: Observable<any> = this.loginInfo.asObservable();
+
   constructor(private router: Router) {}
 
 
@@ -32,6 +35,14 @@ export class DataService {
   getuserInfo(){
     console.log(this.userInfo);
     return this.userInfo;
+  }
+
+  setloginInfo(loginInfo){
+    this.loginInfo.next(loginInfo);
+  }
+
+  getloginInfo(){
+    return this.loginInfo;
   }
 
 }

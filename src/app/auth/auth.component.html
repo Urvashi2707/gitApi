@@ -12,7 +12,11 @@
       <label for="login_field">
         Username
       </label>
-      <input type="text" name="login" id="login_field" class="form-control input-block" [(ngModel)]="usrObj" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus">
+      <input type="text" name="login" id="login_field" class="form-control input-block" [(ngModel)]="usrObj.username" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus">
+      <label for="login_field">
+        Password
+      </label>
+      <input type="password" name="password" id="login_field" class="form-control input-block" [(ngModel)]="usrObj.password" tabindex="1" autocapitalize="off" autocorrect="off" autofocus="autofocus">
       <input type="submit" name="commit" value="Sign in" tabindex="3" class="btn btn-primary btn-block" data-disable-with="Signing in…">
     </div>
   </div>
