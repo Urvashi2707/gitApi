@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let r of repoList" (click)="getContents(r)">
+    <a class="files">{{r.name}}</a>
+    <!-- <span class="sizes">{{r.size}}</span> -->
+  </li>
+</ul>

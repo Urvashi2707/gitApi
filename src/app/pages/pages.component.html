@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+<div class="layout-container">
+    <ng-sidebar-container style="height: 100vh;">
+      <ng-sidebar [(opened)]="_opened" position="left" class="sidebar-default" mode="push">
+          <section style="background-color: #f1f8ff;
+          border: 1px solid #c8e1ff;height: auto;">
+            <div style="width: 350px">
+              <div class="imgDiv">
+                <div class="ImgBorder">
+                    <img src="{{userInformation.avatar_url}}" alt="userImg" class="usrImg"/>
+                </div>
+
+              </div>
+              <div class="takeImgDiv">
+                <button class="btn" id="snap" (click)="openCaptureModal()" style="background-color: #E8E8E8;
+                color: black;
+                border: 1px solid #808080;">Click Here to take Photo</button>
+              </div>
+              <div class="usrInf">
+                <label style="    font-weight: 700;
+                font-size: 20px;"> {{userInformation.login}}</label><br/>
+                <label>Company: </label><label>{{userInformation.company}}</label><br/>
+                <label>Email:</label><label>{{userInformation.email}}</label><br/>
+                <label>Location:</label><label>{{userInformation.location}}</label><br/>
+                <label>Bio:</label><label>{{userInformation.bio}}</label><br/>
+                <label>Public Repo:</label><label>{{userInformation.public_repos}}</label><br/>
+                <label>Created At:</label><label>{{userInformation.created}}</label><br/>
+                <label>Updated At:</label><label>{{userInformation.updated}}</label><br/>
+                <label>Followers:</label><label>{{userInformation.followers}}</label><br/>
+                <label>Following:</label><label>{{userInformation.following}}</label><br/>
+              </div>
+            </div>
+            </section>
+      </ng-sidebar>
+  
+      <div ng-sidebar-content style="padding-top: 2.75rem;background-color:white;margin-left: 2rem;">
+          <section class="mx-4 mt-5 pt-4">
+              <router-outlet></router-outlet>
+          </section>
+      </div>
+      <app-footer></app-footer>
+    </ng-sidebar-container>
+  </div>
+<!-- <div class="pageContainer">
+    <div class="pageHeader">
+       <span>Back</span>
+    </div>
+    <router-outlet></router-outlet>
+</div> -->
+
+<app-footer></app-footer>

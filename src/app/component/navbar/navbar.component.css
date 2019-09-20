@@ -1,0 +1,25 @@
+.default-header{
+    color: #fff;
+    -webkit-box-shadow: 0 0.5rem 1rem 0 rgba(44,51,73,.1);
+    box-shadow: 0 0.5rem 1rem 0 rgba(44,51,73,.1);
+    height: 6.75rem;
+    padding: 1.55rem;
+    margin-bottom: 19px;
+    background-color: black;
+    padding-left: 34px;
+}
+.bckBtn{
+    color: black;
+    background-color: black;
+    border: 1px solid black;
+    /* margin-right: 20px; */
+
+}
+.logoutBtn{
+    float: right;
+}
+.logoutBtn button{
+    color: black;
+    background-color: black;
+    border: 1px solid black;
+}

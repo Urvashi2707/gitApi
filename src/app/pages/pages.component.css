@@ -1,0 +1,66 @@
+.pageContainer{
+    padding: 1%;
+    /* height: 100vh; */
+    background-color: white;
+    margin: 2%;
+}
+.pageHeader{
+    padding: 12px 5px 12px 5px
+}
+/* {
+    background-color:#edf1f7;
+} */
+.layout-container{
+    min-height: 100vh;
+    display: flex;
+    flex: 1;
+    -ms-flex: 1 1 auto;
+    flex-direction: row;
+}
+
+.ng-sidebar {
+    background: purple;
+    width: 13rem;
+}
+
+.ng-sidebar--right {
+    color: red !important;
+    background: antiquewhite;
+    width: 12rem;
+}
+.imgDiv{
+    text-align: center;
+    padding: 20px 10px 30px 10px;
+}
+.usrImg{
+    border-radius: 50%;
+    width: 85%;
+}
+.takeImgDiv{
+    /* background-color: aqua; */
+    height: 6rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 15px 40px 15px 40px;
+}
+.usrInf{
+    /* background-color: yellow; */
+    width: 100%;
+    padding: 15px 40px 15px 40px
+}
+label{
+    display: inline-block;
+    max-width: 100%;
+    font-weight: 400;
+    padding: 2px 5px 00px 5px;
+    margin-bottom: -1px;
+    color: black;
+}
+.ImgBorder{
+    width: 25rem;
+    height: 250px;
+    padding-top: 19px;
+    /* padding-left: 36px; */
+    margin-left: 36px;
+    border: 1px solid #BEBEBE;
+}

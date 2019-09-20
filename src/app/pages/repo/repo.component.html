@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let r of contentList" (click)="getContents(r)">
+   <span><i class="{{r.icon}}" aria-hidden="true"></i></span> <a>{{r.name}}</a>
+  </li>
+</ul>

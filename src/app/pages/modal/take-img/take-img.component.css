@@ -1,0 +1,14 @@
+#scan-canvas{
+    width: 350px;
+}
+li {
+    display: inline;
+    padding: 12px;
+}
+ul{
+    list-style: none;
+}
+#output{
+    margin-top: 30px;
+
+}

@@ -1,0 +1,24 @@
+
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" style="text-align: center;">
+    <canvas id="scan-canvas"></canvas>
+    <div>
+      <button (click)="captureImg()" class="btn-primary btn">Take Image</button> 
+      <button (click)="refreshImg()" class="btn-primary btn">Refresh</button> 
+    </div>
+    <div id="output">
+      <ul>
+        <li *ngFor="let c of captures" (click)="saveImg(c)">
+            <img src="{{ c }}" height="50" />
+        </li>
+    </ul>
+    </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
