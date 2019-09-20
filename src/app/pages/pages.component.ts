@@ -14,39 +14,40 @@ export class PagesComponent implements OnInit {
 
   private _opened: boolean = true;
   closeResult: string
-  public userInformation:any = {
-    "login": "Urvashi2707",
-    "id": 29358439,
-    "node_id": "MDQ6VXNlcjI5MzU4NDM5",
-    "avatar_url": "https://avatars3.githubusercontent.com/u/29358439?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/Urvashi2707",
-    "html_url": "https://github.com/Urvashi2707",
-    "followers_url": "https://api.github.com/users/Urvashi2707/followers",
-    "following_url": "https://api.github.com/users/Urvashi2707/following{/other_user}",
-    "gists_url": "https://api.github.com/users/Urvashi2707/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/Urvashi2707/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/Urvashi2707/subscriptions",
-    "organizations_url": "https://api.github.com/users/Urvashi2707/orgs",
-    "repos_url": "https://api.github.com/users/Urvashi2707/repos",
-    "events_url": "https://api.github.com/users/Urvashi2707/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/Urvashi2707/received_events",
-    "type": "User",
-    "site_admin": false,
-    "name": null,
-    "company": null,
-    "blog": "",
-    "location": null,
-    "email": null,
-    "hireable": null,
-    "bio": null,
-    "public_repos": 11,
-    "public_gists": 0,
-    "followers": 0,
-    "following": 1,
-    "created_at": "2017-06-11T19:06:38Z",
-    "updated_at": "2019-09-16T18:11:41Z"
-  };
+  public userInformation:any;
+  // public userInformation:any = {
+  //   "login": "Urvashi2707",
+  //   "id": 29358439,
+  //   "node_id": "MDQ6VXNlcjI5MzU4NDM5",
+  //   "avatar_url": "https://avatars3.githubusercontent.com/u/29358439?v=4",
+  //   "gravatar_id": "",
+  //   "url": "https://api.github.com/users/Urvashi2707",
+  //   "html_url": "https://github.com/Urvashi2707",
+  //   "followers_url": "https://api.github.com/users/Urvashi2707/followers",
+  //   "following_url": "https://api.github.com/users/Urvashi2707/following{/other_user}",
+  //   "gists_url": "https://api.github.com/users/Urvashi2707/gists{/gist_id}",
+  //   "starred_url": "https://api.github.com/users/Urvashi2707/starred{/owner}{/repo}",
+  //   "subscriptions_url": "https://api.github.com/users/Urvashi2707/subscriptions",
+  //   "organizations_url": "https://api.github.com/users/Urvashi2707/orgs",
+  //   "repos_url": "https://api.github.com/users/Urvashi2707/repos",
+  //   "events_url": "https://api.github.com/users/Urvashi2707/events{/privacy}",
+  //   "received_events_url": "https://api.github.com/users/Urvashi2707/received_events",
+  //   "type": "User",
+  //   "site_admin": false,
+  //   "name": null,
+  //   "company": null,
+  //   "blog": "",
+  //   "location": null,
+  //   "email": null,
+  //   "hireable": null,
+  //   "bio": null,
+  //   "public_repos": 11,
+  //   "public_gists": 0,
+  //   "followers": 0,
+  //   "following": 1,
+  //   "created_at": "2017-06-11T19:06:38Z",
+  //   "updated_at": "2019-09-16T18:11:41Z"
+  // };
   public _toggleSidebar() {
     this._opened = !this._opened;
   }

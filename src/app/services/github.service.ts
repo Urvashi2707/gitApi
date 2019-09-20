@@ -22,6 +22,7 @@ export class GithubService {
     var n = d.getTime();
     this.millisecond = Number(n)
     this.username = user;
+    this.password = pass;
    const httpOptions = {
       headers: new HttpHeaders({
           'Content-Type':  'application/json',
@@ -40,11 +41,23 @@ export class GithubService {
   getContent(repoObj){
     var repoName = repoObj.name;
     this.repoName = repoObj.name;
+    const httpOptions = {
+      headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': 'Basic ' + new Buffer(this.username+ ':' + this.password).toString('base64')
+       })
+  };
     return this._http.get('https://api.github.com/repos/'+this.username +'/'+repoName+'/contents/')
   }
 
   getfolderContent(fileObj){
     var fileName = fileObj.name;
+    const httpOptions = {
+      headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': 'Basic ' + new Buffer(this.username+ ':' + this.password).toString('base64')
+       })
+  };
     return this._http.get('https://api.github.com/repos/'+this.username +'/'+this.repoName+'/contents/'+fileName)
   }
 
