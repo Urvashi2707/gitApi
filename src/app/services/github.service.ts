@@ -26,20 +26,25 @@ export class GithubService {
    const httpOptions = {
       headers: new HttpHeaders({
           'Content-Type':  'application/json',
-          'Authorization': 'Basic ' + new Buffer(user+ ':' + pass).toString('base64')
+          'Authorization': "Basic " + new Buffer(user+ ':' + pass).toString('base64')
        })
   };
-    return this._http.get('https://api.github.com/users/'+user,httpOptions);
+    return this._http.get('https://api.github.com/user',httpOptions);
   }
 
   getRepo(){
-  return this._http.get('https://api.github.com/users/'+this.username +'/repos');
+    const httpOptions = {
+      headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': 'Basic ' + new Buffer(this.username+ ':' + this.password).toString('base64')
+       })
+  };
+  return this._http.get('https://api.github.com/user/repos',httpOptions);
 
   }
 
   // GET /repos/:owner/:repo/contents/:path
   getContent(repoObj){
-    var repoName = repoObj.name;
     this.repoName = repoObj.name;
     const httpOptions = {
       headers: new HttpHeaders({
@@ -47,7 +52,7 @@ export class GithubService {
           'Authorization': 'Basic ' + new Buffer(this.username+ ':' + this.password).toString('base64')
        })
   };
-    return this._http.get('https://api.github.com/repos/'+this.username +'/'+repoName+'/contents/')
+    return this._http.get('https://api.github.com/repos/'+this.username +'/'+this.repoName+'/contents/',httpOptions)
   }
 
   getfolderContent(fileObj){
@@ -58,7 +63,7 @@ export class GithubService {
           'Authorization': 'Basic ' + new Buffer(this.username+ ':' + this.password).toString('base64')
        })
   };
-    return this._http.get('https://api.github.com/repos/'+this.username +'/'+this.repoName+'/contents/'+fileName)
+    return this._http.get('https://api.github.com/repos/'+this.username +'/'+this.repoName+'/contents/'+fileName,httpOptions)
   }
 
 }

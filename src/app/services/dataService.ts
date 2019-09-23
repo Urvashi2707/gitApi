@@ -28,12 +28,12 @@ export class DataService {
 
 
   setuserInfo(userInfo){
-    console.log(userInfo);
+    console.log(userInfo,'setuserInfo','ds');
     this.userInfo.next(userInfo);
   }
 
   getuserInfo(){
-    console.log(this.userInfo);
+    console.log(this.userInfo,"getuserInfo");
     return this.userInfo;
   }
 

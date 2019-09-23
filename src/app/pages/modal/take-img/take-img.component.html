@@ -7,10 +7,10 @@
     </div>
     <div class="modal-body" style="text-align: center;">
     <canvas id="scan-canvas"></canvas>
-    <div>
+    <!-- <div>
       <button (click)="captureImg()" class="btn-primary btn">Take Image</button> 
       <button (click)="refreshImg()" class="btn-primary btn">Refresh</button> 
-    </div>
+    </div> -->
     <div id="output">
       <ul>
         <li *ngFor="let c of captures" (click)="saveImg(c)">
@@ -20,5 +20,8 @@
     </div>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+      <div style="width: 100%">
+        <button (click)="captureImg()" class="btn-primary btn" style="width: 49%">Take Image</button> 
+        <button (click)="refreshImg()" class="btn-primary btn" style="width: 49%">Refresh</button> 
+      </div>
     </div>
